@@ -26,7 +26,7 @@ public class MessageServiceImpl implements MessageService {
         return "sdgfas";
     }
 
-    public void testRetry() throws Exception {
+    public String testRetry() throws Exception {
         System.out.println("testRetry start ...");
         try {
             Thread.sleep(1000);

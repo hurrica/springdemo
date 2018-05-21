@@ -35,9 +35,21 @@ public class RetryTest {
      * 延迟为 第一次1分钟，第二次2分钟，第三次为4分钟，第四次为8分钟  依此类推重试12次
      */
     private final static int MULTIPLIER = 2;
+    private int times = 1;
 
     @Retryable(maxAttempts = MAXATTEMPTS)
-    public void testRetry() throws Exception {
-        messageService.testRetry();
+    public String testRetry() throws Exception {
+        System.out.println("testRetry start ...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (times >5){
+            return "success";
+        } else {
+            times++;
+            throw new Exception("retry test");
+        }
     }
 }
