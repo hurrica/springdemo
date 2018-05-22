@@ -1,6 +1,9 @@
 package com.bluepay.spring.demo.elasticjob.config;
 
 import com.bluepay.spring.demo.elasticjob.job.MyElasticJob;
+import com.bluepay.spring.demo.elasticjob.job.TestElasticJob01;
+import com.bluepay.spring.demo.elasticjob.job.TestElasticJob02;
+import com.bluepay.spring.demo.elasticjob.job.TestElasticJob03;
 import com.dangdang.ddframe.job.config.JobCoreConfiguration;
 import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
 import com.dangdang.ddframe.job.event.JobEventConfiguration;
@@ -40,10 +43,40 @@ public class ElasticJobConfig {
     public JobScheduler myJob(){
         ZookeeperRegistryCenter registryCenter = registryCenter();
         JobEventConfiguration jobEventRdbConfig = new JobEventRdbConfiguration(dataSource);
-        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("myElasticJob", "0 0/2 * * * ?", 3).build();
+        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("myElasticJob", "0/5 * * * * ?", 1).build();
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
         return new SpringJobScheduler(new MyElasticJob(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
+    }
+
+    @Bean(initMethod = "init")
+    public JobScheduler testJob01(){
+        ZookeeperRegistryCenter registryCenter = registryCenter();
+        JobEventConfiguration jobEventRdbConfig = new JobEventRdbConfiguration(dataSource);
+        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("testJob01", "0/5 * * * * ?", 1).build();
+        SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
+        LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
+        return new SpringJobScheduler(new TestElasticJob01(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
+    }
+
+    @Bean(initMethod = "init")
+    public JobScheduler testJob02(){
+        ZookeeperRegistryCenter registryCenter = registryCenter();
+        JobEventConfiguration jobEventRdbConfig = new JobEventRdbConfiguration(dataSource);
+        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("testJob02", "0/5 * * * * ?", 1).build();
+        SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
+        LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
+        return new SpringJobScheduler(new TestElasticJob02(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
+    }
+
+    @Bean(initMethod = "init")
+    public JobScheduler testJob03(){
+        ZookeeperRegistryCenter registryCenter = registryCenter();
+        JobEventConfiguration jobEventRdbConfig = new JobEventRdbConfiguration(dataSource);
+        JobCoreConfiguration jobCoreConfiguration = JobCoreConfiguration.newBuilder("testJob0", "0/5 * * * * ?", 3).build();
+        SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
+        LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
+        return new SpringJobScheduler(new TestElasticJob03(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
     }
 
 }
