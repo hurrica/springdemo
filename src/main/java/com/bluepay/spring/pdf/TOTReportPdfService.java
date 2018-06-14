@@ -130,6 +130,8 @@ public class TOTReportPdfService {
         pdfPCell.setPhrase(createParagraph(text));
         pdfPCell.setHorizontalAlignment(align);
         pdfPCell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+
+        pdfPCell.setMinimumHeight(30);//设置表格行高
         return pdfPCell;
     }
 

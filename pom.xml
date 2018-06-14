@@ -10,7 +10,6 @@
 
     <properties>
         <kotlin.version>1.2.31</kotlin.version>
-        <zookeeper.version>3.4.8</zookeeper.version>
     </properties>
 
 

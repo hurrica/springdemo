@@ -1,12 +1,17 @@
 package com.bluepay.spring.demo.service.impl;
 
 import com.bluepay.spring.demo.service.MessageService;
+import com.bluepay.spring.model.TestModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MessageServiceImpl implements MessageService {
+public class MessageServiceImpl implements MessageService<TestModel> {
+
+    public MessageServiceImpl(){
+        register("messageServiceImpl", this);
+    }
 
     @Autowired
     AsyncTest test;
@@ -35,4 +40,15 @@ public class MessageServiceImpl implements MessageService {
         }
         throw new Exception("retry test");
     }
+
+    @Override
+    public void genericTest(TestModel entity) {
+        System.out.println(entity.getMessage());
+    }
+
+    @Override
+    public void register(String serviceName, MessageService messageService) {
+        serviceMap.put(serviceName, messageService);
+    }
+
 }

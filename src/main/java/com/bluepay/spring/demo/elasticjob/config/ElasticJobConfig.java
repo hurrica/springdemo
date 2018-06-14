@@ -66,7 +66,7 @@ public class ElasticJobConfig {
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
         return new SpringJobScheduler(new TestElasticJob02(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
-    }
+    }*/
 
     @Bean(initMethod = "init")
     public JobScheduler testJob03(){
@@ -76,7 +76,7 @@ public class ElasticJobConfig {
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
         return new SpringJobScheduler(new TestElasticJob03(), registryCenter, liteJobConfiguration, jobEventRdbConfig, new MyElasticJobListener());
-    }*/
+    }
 
     @Bean(initMethod = "init")
     public JobScheduler testJob01(){
