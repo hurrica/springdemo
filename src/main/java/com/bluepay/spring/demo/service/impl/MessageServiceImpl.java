@@ -43,7 +43,7 @@ public class MessageServiceImpl implements MessageService<TestModel> {
 
     @Override
     public void genericTest(TestModel entity) {
-        System.out.println(entity.getMessage());
+        System.out.println(entity.getMsisdn());
     }
 
     @Override

@@ -9,7 +9,7 @@ import java.util.Objects;
 
 @Component
 public class JedisService {
-    @Autowired
+    /*@Autowired
     private JedisPool jedisPool;
 
     public Long ttl(String key) {
@@ -54,12 +54,12 @@ public class JedisService {
         }
     }
 
-    /**
+    *//**
      * 判断当前key的有效时间是否大于maxEffectiveTime
      * @param key
      * @param maxEffectiveTime
      * @return
-     */
+     *//*
     public boolean checkTtl(String key, int maxEffectiveTime) {
         Jedis jedis = jedisPool.getResource();
         try {
@@ -95,5 +95,5 @@ public class JedisService {
         } finally {
             closeJedis(jedis);
         }
-    }
+    }*/
 }

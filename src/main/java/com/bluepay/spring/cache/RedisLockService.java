@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class RedisLockService {
-    @Autowired
+    /*@Autowired
     private JedisService jedisService;
 
     private static final String LOCK_SUCCESS = "OK";
@@ -33,5 +33,5 @@ public class RedisLockService {
             return true;
         }
         return false;
-    }
+    }*/
 }
