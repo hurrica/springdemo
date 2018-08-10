@@ -58,20 +58,21 @@ public class ExpressionDemo {
                 sb.append(ch);
             }
         }
-        while (!operator.empty()){
-            postfixStack.push(String.valueOf(operator.pop()));
-        }
         if (sb.length() > 0){
             postfixStack.push(sb.toString());
         }
+        while (!operator.empty()){
+            postfixStack.push(String.valueOf(operator.pop()));
+        }
     }
 
-    private static boolean compareOperator(int priority, int priority1) {
-        return priority > priority1;
+    private static boolean compareOperator(int topOp, int currentOp) {
+        return topOp >= currentOp;
     }
 
     public static void main(String[] args) {
-        String expression = "5+6*10-15+(5-5)*1000";
+        String expression = "5+6*10-15";
+        System.out.println(5+6*10-15);
         System.out.println(expression);
         if (checkExpression(expression)){
             expression = expression.trim();
@@ -79,11 +80,12 @@ public class ExpressionDemo {
             //拆分表达式
             toPostFixExpression(chars);
             //计算
-            while (!postfixStack.empty()){
+            /*while (!postfixStack.empty()){
                 System.out.print(postfixStack.pop());
-            }
+            }*/
 
             calculate();
+            System.out.println();
             System.out.println(result);
         } else {
             System.out.println("错误的算术表达式：" + expression);
@@ -97,7 +99,9 @@ public class ExpressionDemo {
             String value = postfixStack.pop();
             OperatorEnum operatorEnum = OperatorEnum.valueOfOperator(value);
             if (Objects.nonNull(operatorEnum)){
-                calculate(operatorEnum);
+                BigDecimal secondValue = operand.pop();
+                BigDecimal firstValue = operand.peek();
+                calculate(operatorEnum.operator, secondValue, firstValue);
             } else {
                 operand.push(new BigDecimal(value));
             }
@@ -109,23 +113,24 @@ public class ExpressionDemo {
      * 获取两个操作数并计算
      * @return
      */
-    private static void calculate(OperatorEnum op) {
-        switch (op.operator){
+    private static void calculate(String operator, BigDecimal secondValue, BigDecimal firstValue) {
+        switch (operator){
             case "+":
-                result = operand.pop().add(operand.pop());
+                result = firstValue.add(secondValue);
                 break;
             case "-":
-                result = operand.pop().subtract(operand.pop());
+                result = firstValue.subtract(secondValue);
                 break;
             case "*":
-                result = operand.pop().multiply(operand.pop());
+                result = firstValue.multiply(secondValue);
                 break;
             case "/":
-                result = operand.pop().divide(operand.pop(), 2, BigDecimal.ROUND_HALF_UP);
+                result = firstValue.divide(secondValue, 2, BigDecimal.ROUND_HALF_UP);
                 break;
         }
         operand.push(result);
     }
+
 
     private static boolean isOperator(char operator) {
         return Objects.nonNull(OperatorEnum.valueOfOperator(String.valueOf(operator)));
