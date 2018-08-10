@@ -25,7 +25,7 @@ public class MessagePrinterTest {
     @Test
     public void printMessage() throws Exception {
         TestModel testModel = new TestModel();
-        testModel.setMessage("test generic");
+        testModel.setDescription("test generic");
         messageService.genericTest(testModel);
         String ss = "sadfasf";
         ss.getBytes("iso-8859-11");
@@ -34,8 +34,8 @@ public class MessagePrinterTest {
     }
 
     public static void main(String[] args) throws IOException {
-        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream("test.txt"), "iso-8859-11");
-        String ss = new String ("hello,ารรับชำระผ่านช่องทางอิเล็กทรอนิกส์".getBytes("iso-8859-11"), "iso-8859-11");
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream("test.txt", true), "iso-8859-11");
+            String ss = new String ("hello,ารรับชำระผ่านช่องทางอิเล็กทรอนิกส์\n".getBytes("iso-8859-11"), "iso-8859-11");
         outputStreamWriter.write(ss);
         outputStreamWriter.flush();
         outputStreamWriter.close();

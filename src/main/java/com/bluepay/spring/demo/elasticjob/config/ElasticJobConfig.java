@@ -1,3 +1,4 @@
+/*
 package com.bluepay.spring.demo.elasticjob.config;
 
 import com.bluepay.spring.demo.elasticjob.job.MyElasticJob;
@@ -13,7 +14,9 @@ import com.dangdang.ddframe.job.lite.config.LiteJobConfiguration;
 import com.dangdang.ddframe.job.lite.spring.api.SpringJobScheduler;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
+import org.apache.zookeeper.ZooKeeper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -26,7 +29,7 @@ public class ElasticJobConfig {
 
     private String nameSpace = "test-elastic-job";
 
-    @Autowired
+    @Qualifier("dataSource")
     DataSource dataSource;
 
     @Bean(initMethod = "init")
@@ -38,7 +41,8 @@ public class ElasticJobConfig {
         return new ZookeeperRegistryCenter(zookeeperConfiguration);
     }
 
-    /*@Bean(initMethod = "init")
+    */
+/*@Bean(initMethod = "init")
     public JobScheduler myJob(){
         ZookeeperRegistryCenter registryCenter = registryCenter();
         JobEventConfiguration jobEventRdbConfig = new JobEventRdbConfiguration(dataSource);
@@ -66,7 +70,8 @@ public class ElasticJobConfig {
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(jobCoreConfiguration, MyElasticJob.class.getCanonicalName());
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
         return new SpringJobScheduler(new TestElasticJob02(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
-    }*/
+    }*//*
+
 
     @Bean(initMethod = "init")
     public JobScheduler testJob03(){
@@ -87,5 +92,5 @@ public class ElasticJobConfig {
         LiteJobConfiguration liteJobConfiguration = LiteJobConfiguration.newBuilder(simpleJobConfiguration).build();
         return new SpringJobScheduler(new TestElasticJob01(), registryCenter, liteJobConfiguration, jobEventRdbConfig);
     }
-
 }
+*/
