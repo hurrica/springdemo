@@ -173,6 +173,16 @@
             <artifactId>persistence-api</artifactId>
             <version>1.0</version>
         </dependency>
+
+
+        <!--    pdf start   -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>1.8.13</version>
+        </dependency>
+        <!--   pdf end   -->
+
     </dependencies>
 
     <build>
