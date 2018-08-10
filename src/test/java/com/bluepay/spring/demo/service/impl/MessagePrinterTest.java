@@ -1,11 +1,16 @@
 package com.bluepay.spring.demo.service.impl;
 
 
+import com.bluepay.spring.demo.service.MessageService;
+import com.bluepay.spring.model.TestModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+
+import java.io.*;
+import java.util.Objects;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -14,9 +19,27 @@ public class MessagePrinterTest {
     @Autowired
     MessagePrinter messagePrinter;
 
+    @Autowired
+    MessageService messageService;
+
     @Test
     public void printMessage() throws Exception {
-        messagePrinter.testRetry();
-        System.out.println(messagePrinter);
+        TestModel testModel = new TestModel();
+        testModel.setMessage("test generic");
+        messageService.genericTest(testModel);
+        String ss = "sadfasf";
+        ss.getBytes("iso-8859-11");
+        System.out.println(messageService.getMessageService("messageServiceImpl"));
+        System.out.println(MessageService.serviceMap.get("messageServiceImpl"));
+    }
+
+    public static void main(String[] args) throws IOException {
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream("test.txt"), "iso-8859-11");
+        String ss = new String ("hello,ารรับชำระผ่านช่องทางอิเล็กทรอนิกส์".getBytes("iso-8859-11"), "iso-8859-11");
+        outputStreamWriter.write(ss);
+        outputStreamWriter.flush();
+        outputStreamWriter.close();
+
+        System.out.println(new String("hello,ารรับชำระผ่านช่องทางอิเล็กทรอนิกส์".getBytes("iso-8859-11")));
     }
 }
