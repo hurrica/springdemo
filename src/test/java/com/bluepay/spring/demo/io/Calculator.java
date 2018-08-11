@@ -8,9 +8,9 @@ public class Calculator {
     private Stack<Character> opStack  = new Stack<Character>();//运算符栈
     private int [] operatPriority  = new int[] {0,3,2,1,-1,1,0,2};//运用运算符ASCII码-40做索引的运算符优先级
     public static void main(String[] args) {
-        System.out.println(5+6*10-15);
+        System.out.println(10*(2-2)+10*5-15+5*(-5));
         Calculator cal  = new Calculator();
-        String s = "5+6*10-15";
+        String s = "10*(2-2)+10*5-15-5*5";
         double result  = cal.calculate(s);
         System.out.println(result);
     }

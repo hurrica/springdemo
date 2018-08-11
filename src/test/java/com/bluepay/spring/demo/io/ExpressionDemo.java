@@ -13,97 +13,98 @@ public class ExpressionDemo {
     private static Stack<String> postfixStack = new Stack<>();//后缀表达式栈
     private static Stack<String> operator = new Stack<>();//操作符栈
 
-    /**
-     * 中缀表达式转换成后缀表达式
-     * @param expression
-     */
-    private static void toPostFixExpression(char[] expression) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = 0; i < expression.length; i++) {
-            //1、从右到左扫描表达式
-            char ch = expression[i];
-            OperatorEnum op = OperatorEnum.valueOfOperator(String.valueOf(ch));
-            if (Objects.nonNull(op)){//如果是运算符
-                if (sb.length() > 0){
-                    postfixStack.push(sb.toString());
-                    sb.setLength(0);
-                }
-                if (op.isBracket){//括号
-                    if (op.equals(OperatorEnum.LEFT_BRACKET)){//左括号，直接放入操作符栈
-                        operator.push(op.operator);
-                    } else { //右括号
-                        while (!operator.peek().equals(OperatorEnum.LEFT_BRACKET.operator)){
-                            postfixStack.push(String.valueOf(operator.pop()));
-                        }
-                        operator.pop();
-                    }
-                } else {//不是括号比较优先级
-                    if (operator.empty()){
-                        //操作符栈为空，直接入栈
-                        operator.push(op.operator);
-                    } else {
-                        while (!operator.empty()){
-                            String top = operator.peek();//栈顶元素
-                            if (compareOperator(OperatorEnum.valueOfOperator(top).priority, op.priority) && !OperatorEnum.valueOfOperator(top).isBracket){
-                                postfixStack.push(String.valueOf(operator.pop()));
-                            } else {
-                                break;
-                            }
-                        }
-                        //操作数入栈
-                        operator.push(op.operator);
-                    }
-                }
-            } else {//操作数放入操作数栈
-                sb.append(ch);
-            }
-        }
-        if (sb.length() > 0){
-            postfixStack.push(sb.toString());
-        }
-        while (!operator.empty()){
-            postfixStack.push(String.valueOf(operator.pop()));
-        }
-    }
-
     private static boolean compareOperator(int topOp, int currentOp) {
         return topOp >= currentOp;
     }
 
     public static void main(String[] args) {
-        String expression = "5+6*10-15";
-        System.out.println(5+6*10-15);
-        System.out.println(expression);
+        String expression = "10*(2-2)+10*5-15-5*5";
+        System.out.println(10*(2-2)+10*5-15-5*5);
         if (checkExpression(expression)){
             expression = expression.trim();
-            char[] chars = expression.toCharArray();
-            //拆分表达式
-            toPostFixExpression(chars);
-            //计算
-            /*while (!postfixStack.empty()){
-                System.out.print(postfixStack.pop());
-            }*/
-
+            List<String> list = stringToList(expression);
+            toPostFixExpression(list);
             calculate();
-            System.out.println();
-            System.out.println(result);
         } else {
             System.out.println("错误的算术表达式：" + expression);
         }
     }
 
+    private static void toPostFixExpression(List<String> list) {
+        list.forEach(op->{
+            OperatorEnum currentOp = OperatorEnum.valueOfOperator(op);
+            if (Objects.nonNull(currentOp)){
+                //操作符
+                if (currentOp.isBracket){
+                    //括号
+                    if (currentOp.equals(OperatorEnum.LEFT_BRACKET)){
+                        //左括号直接入操作符栈
+                        operator.push(op);
+                    } else {
+                        // 右括号，轮询操作符栈，直到找到上一个左括号
+                        while (!OperatorEnum.LEFT_BRACKET.getOperator().equals(operator.peek())){
+                            postfixStack.push(operator.pop());
+                        }
+                        //左括号出栈
+                        operator.pop();
+                    }
+                } else {
+                    if (operator.empty()){
+                        operator.push(op);
+                    } else {
+                        OperatorEnum topOp = OperatorEnum.valueOfOperator(operator.peek());
+                        while (!operator.empty() && compareOperator(topOp.getPriority(), currentOp.getPriority()) && !topOp.isBracket){
+                            topOp = OperatorEnum.valueOfOperator(operator.pop());
+                            postfixStack.push(topOp.getOperator());
+                        }
+                        operator.push(currentOp.getOperator());
+                    }
+                }
+            } else {
+                //操作数直接入栈
+                postfixStack.push(op);
+            }
+        });
+        while (!operator.empty()){
+            postfixStack.push(operator.pop());
+        }
+    }
+
+    private static List<String> stringToList(String expression) {
+        char[] chars = expression.toCharArray();
+        StringBuilder stringBuilder = new StringBuilder();
+        List<String> list = new ArrayList<>();
+        for (char ch: chars) {
+            if (Objects.nonNull(OperatorEnum.valueOfOperator(String.valueOf(ch)))){
+                if (stringBuilder.length() > 0){
+                    list.add(stringBuilder.toString());
+                    stringBuilder.setLength(0);
+                }
+                list.add(String.valueOf(ch));
+            }else {
+                stringBuilder.append(ch);
+            }
+        }
+        if (stringBuilder.length() > 0){
+            list.add(stringBuilder.toString());
+            stringBuilder.setLength(0);
+        }
+        return list;
+    }
+
     private static Stack<BigDecimal> operand = new Stack<>();
     private static void calculate() {
-        Collections.reverse(postfixStack);
+        Collections.reverse(postfixStack);//将后缀表达式反转
+        String currentValue;//参与计算的算术运算符
         while (!postfixStack.empty()){
-            String value = postfixStack.pop();
-            OperatorEnum operatorEnum = OperatorEnum.valueOfOperator(value);
-            if (Objects.nonNull(operatorEnum)){
+            currentValue = postfixStack.pop();
+            if (Objects.nonNull(OperatorEnum.valueOfOperator(currentValue))){
                 BigDecimal secondValue = operand.pop();
-                BigDecimal firstValue = operand.peek();
-                calculate(operatorEnum.operator, secondValue, firstValue);
+                BigDecimal firstValue = operand.pop();
+                calculate(currentValue, secondValue, firstValue);
+                operand.push(result);
             } else {
-                operand.push(new BigDecimal(value));
+                operand.push(new BigDecimal(currentValue));
             }
         }
     }
@@ -113,27 +114,22 @@ public class ExpressionDemo {
      * 获取两个操作数并计算
      * @return
      */
-    private static void calculate(String operator, BigDecimal secondValue, BigDecimal firstValue) {
+    private static BigDecimal calculate(String operator, BigDecimal secondValue, BigDecimal firstValue) {
         switch (operator){
             case "+":
                 result = firstValue.add(secondValue);
-                break;
+                return result;
             case "-":
                 result = firstValue.subtract(secondValue);
-                break;
+                return result;
             case "*":
                 result = firstValue.multiply(secondValue);
-                break;
+                return result;
             case "/":
                 result = firstValue.divide(secondValue, 2, BigDecimal.ROUND_HALF_UP);
-                break;
+                return result;
+            default:throw new RuntimeException("操作符错误！");
         }
-        operand.push(result);
-    }
-
-
-    private static boolean isOperator(char operator) {
-        return Objects.nonNull(OperatorEnum.valueOfOperator(String.valueOf(operator)));
     }
 
     private enum OperatorEnum{
@@ -199,7 +195,6 @@ public class ExpressionDemo {
 
         //数字集合
         List<Character> digit_list = new ArrayList<>();
-        StringBuffer stringBuffer = new StringBuffer();
         //循环判断
         for (int i = 0; i < len; i++) {
             if(Character.isDigit(arr[i])|| arr[i] == '.'){ //数字和小数点判断
@@ -295,6 +290,6 @@ public class ExpressionDemo {
     private static boolean isNumber(String str) {
         Pattern pattern = Pattern.compile("^-?([1-9]\\d*\\.\\d+|0\\.\\d*[1-9]\\d*|[1-9]\\d*|0)$");
         Matcher isNum = pattern.matcher(str);
-        if( !isNum.matches() ){ return false; } return true;
+        return !isNum.matches();
     }
 }
