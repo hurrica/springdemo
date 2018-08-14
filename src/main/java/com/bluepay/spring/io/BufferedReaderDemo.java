@@ -11,11 +11,11 @@ public class BufferedReaderDemo {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = null;
         try {
-            reader = new BufferedReader(new InputStreamReader(System.in));
+            reader = new BufferedReader(new InputStreamReader(System.in, "UTF-8"));
             while (true){
                 System.out.println("Enter a String:");
                 String value = reader.readLine();
-                System.out.println("your string is:");
+                System.out.println("your string is:" + value);
             }
         } finally {
             if (reader != null){

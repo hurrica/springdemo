@@ -21,10 +21,9 @@ public class ExpressionDemo {
         String expression = "10*(2-2)+10*5-15-5*5";
         System.out.println(10*(2-2)+10*5-15-5*5);
         if (checkExpression(expression)){
-            expression = expression.trim();
             List<String> list = stringToList(expression);
             toPostFixExpression(list);
-            calculate();
+            System.out.println(calculate());
         } else {
             System.out.println("错误的算术表达式：" + expression);
         }
@@ -93,7 +92,7 @@ public class ExpressionDemo {
     }
 
     private static Stack<BigDecimal> operand = new Stack<>();
-    private static void calculate() {
+    private static BigDecimal calculate() {
         Collections.reverse(postfixStack);//将后缀表达式反转
         String currentValue;//参与计算的算术运算符
         while (!postfixStack.empty()){
@@ -107,6 +106,7 @@ public class ExpressionDemo {
                 operand.push(new BigDecimal(currentValue));
             }
         }
+        return operand.pop();
     }
 
     private static BigDecimal result;
@@ -290,6 +290,6 @@ public class ExpressionDemo {
     private static boolean isNumber(String str) {
         Pattern pattern = Pattern.compile("^-?([1-9]\\d*\\.\\d+|0\\.\\d*[1-9]\\d*|[1-9]\\d*|0)$");
         Matcher isNum = pattern.matcher(str);
-        return !isNum.matches();
+        return isNum.matches();
     }
 }
