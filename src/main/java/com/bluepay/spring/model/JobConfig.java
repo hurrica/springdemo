@@ -10,7 +10,7 @@ import javax.persistence.Table;
  */
 @Data
 @Table(name = "job_config")
-public class JobConfig {
+public class JobConfig extends BaseModel{
     @Id
     private Integer id;
 

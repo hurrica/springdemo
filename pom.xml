@@ -165,7 +165,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.16.20</version>
+            <version>1.18.2</version>
         </dependency>
 
         <dependency>
@@ -187,6 +187,13 @@
             <version>1.8.13</version>
         </dependency>
         <!--   pdf end   -->
+
+        <!--  ehcache  -->
+        <dependency>
+            <groupId>org.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
+            <version>3.6.1</version>
+        </dependency>
 
     </dependencies>
 
