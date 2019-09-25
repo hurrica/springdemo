@@ -8,6 +8,6 @@ import java.util.List;
 
 @Mapper()
 public interface DynamicJobConfigDao {
-    @Select("select * from trans_all_log")
+    @Select("select * from ts_transaction")
     List<TestModel> listConfig();
 }

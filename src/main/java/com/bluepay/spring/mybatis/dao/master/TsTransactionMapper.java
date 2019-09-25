@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface TsTransactionDao {
+public interface TsTransactionMapper {
     List<TsTransaction> listAll(@Param("transactionType") TransactionType cash);
 }

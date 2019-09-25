@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bluepay.spring.mybatis.dao.master.JobConfigDao">
+<mapper namespace="com.bluepay.spring.mybatis.dao.master.JobConfigMapper">
     <select id="selectConfig" resultType="com.bluepay.spring.model.JobConfig">
     select * from job_config limit 1
   </select>

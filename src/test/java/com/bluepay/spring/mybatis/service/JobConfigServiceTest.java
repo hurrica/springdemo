@@ -4,7 +4,7 @@ package com.bluepay.spring.mybatis.service;
 import com.bluepay.spring.Application;
 import com.bluepay.spring.mybatis.dao.DynamicJobConfigDao;
 import com.bluepay.spring.mybatis.dao.DynamicJobConfigSlaveDao;
-import com.bluepay.spring.mybatis.dao.slave.JobConfigSlaveDao;
+import com.bluepay.spring.mybatis.dao.slave.JobConfigSlaveMapper;
 import com.bluepay.spring.mybatis.dynamic.DataSourceEnum;
 import com.bluepay.spring.mybatis.dynamic.DynamicDataSourceContextHolder;
 import org.junit.Test;
@@ -22,7 +22,7 @@ public class JobConfigServiceTest {
     JobConfigService jobConfigService;
 
     @Autowired
-    JobConfigSlaveDao jobConfigSlaveDao;
+    JobConfigSlaveMapper jobConfigSlaveMapper;
 
     @Autowired
     DynamicJobConfigDao dynamicJobConfigDao;
@@ -41,7 +41,7 @@ public class JobConfigServiceTest {
         System.out.println("********************************");
         System.out.println(dynamicJobConfigDao.listConfig());
 
-        //System.out.println(jobConfigSlaveDao.listConfig());
+        //System.out.println(jobConfigSlaveMapper.listConfig());
     }
 
     public static void main(String[] args) throws InterruptedException {

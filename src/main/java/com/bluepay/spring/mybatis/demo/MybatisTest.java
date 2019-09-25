@@ -1,6 +1,6 @@
 package com.bluepay.spring.mybatis.demo;
 
-import com.bluepay.spring.mybatis.dao.master.TsTransactionDao;
+import com.bluepay.spring.mybatis.dao.master.TsTransactionMapper;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -22,7 +22,7 @@ public class MybatisTest {
         SqlSession sqlSession = null;
         try {
             sqlSession = sqlSessionFactory.openSession();
-            TsTransactionDao transactionDao = sqlSession.getMapper(TsTransactionDao.class);
+            TsTransactionMapper transactionDao = sqlSession.getMapper(TsTransactionMapper.class);
             List<TsTransaction> jobConfigList = transactionDao.listAll(TransactionType.CASH);
             System.out.println(jobConfigList);
         }  finally {

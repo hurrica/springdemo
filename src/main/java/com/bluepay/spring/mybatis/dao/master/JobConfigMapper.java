@@ -5,7 +5,7 @@ import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
-public interface JobConfigDao {
+public interface JobConfigMapper {
     @Select("select * from ts_transaction limit 10")
     List<TsTransaction> listConfig();
 }

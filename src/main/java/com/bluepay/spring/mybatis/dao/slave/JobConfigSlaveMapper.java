@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Select;
 import java.util.List;
 
 @Mapper
-public interface JobConfigSlaveDao {
+public interface JobConfigSlaveMapper {
     @Select("SELECT * FROM shopping_trade_info limit 10")
     List<ShoppingTradeInfo> listConfig();
 }

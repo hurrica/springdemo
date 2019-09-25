@@ -10,7 +10,7 @@ import java.util.Optional;
  * @date 2017年12月25日 下午4:52:18
  * @version 
  */
-public enum TransactionType implements BaseEnum<TransactionType, String> {
+public enum TransactionType implements BaseEnum<String> {
 
     ISSUE("发行", "issue"),
     TRANSFER("转让", "transfer"),
@@ -26,17 +26,10 @@ public enum TransactionType implements BaseEnum<TransactionType, String> {
         this.displayName = displayName;
     }
 
+
     @Override
-    public String getDickKey() {
+    public String getDictKey() {
         return this.dictKey;
     }
 
-    @Override
-    public BaseEnum<TransactionType, String> toBaseEnum(String s) {
-        Optional<TransactionType> optional = Arrays.stream(values()).filter(transactionType -> transactionType.getDickKey().endsWith(s)).findAny();
-        if (optional.isPresent()){
-            return optional.get();
-        }
-        return null;
-    }
 }
