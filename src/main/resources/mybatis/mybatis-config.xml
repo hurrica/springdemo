@@ -9,6 +9,7 @@
     <typeHandlers>
         <typeHandler handler="com.bluepay.spring.mybatis.config.MyEnumTypeHandler" javaType="com.bluepay.spring.mybatis.demo.BaseEnum"></typeHandler>
     </typeHandlers>
+
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>

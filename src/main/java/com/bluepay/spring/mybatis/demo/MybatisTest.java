@@ -22,6 +22,7 @@ public class MybatisTest {
         SqlSession sqlSession = null;
         try {
             sqlSession = sqlSessionFactory.openSession();
+            List<TsTransaction> list = sqlSession.selectList("com.bluepay.spring.mybatis.dao.master.TsTransactionMapper.listAll", null);
             TsTransactionMapper transactionDao = sqlSession.getMapper(TsTransactionMapper.class);
             List<TsTransaction> jobConfigList = transactionDao.listAll(TransactionType.CASH);
             System.out.println(jobConfigList);
@@ -30,4 +31,18 @@ public class MybatisTest {
                 sqlSession.close();
         }
     }
+    public static void test() throws IOException {
+        String resource = "mybatis/mybatis-config.xml";
+        InputStream inputStream = Resources.getResourceAsStream(resource);
+        SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = sqlSessionFactory.openSession();
+
+        }  finally {
+            if (sqlSession != null)
+                sqlSession.close();
+        }
+    }
+
 }

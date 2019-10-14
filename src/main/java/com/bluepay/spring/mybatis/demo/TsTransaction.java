@@ -40,11 +40,6 @@ public class TsTransaction {
 	private String recTransHash;
 
 	/**
-	 * 交易类型
-	 */
-	private TransactionType transactionType;
-
-	/**
 	 * 交易资产id
 	 */
 	private Long assetId;

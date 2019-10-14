@@ -22,7 +22,7 @@ public class DynamicDataSourceAspect {
 
     @After("@annotation(targetDataSource)")
     public void restoreDataSource(TargetDataSource targetDataSource){
-        //DynamicDataSourceContextHolder.clearDataSourceType();
+        DynamicDataSourceContextHolder.clearDataSourceType();
     }
 
 }

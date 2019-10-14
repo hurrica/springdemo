@@ -1,6 +1,6 @@
 package com.bluepay.spring.test;
 
-import java.math.BigDecimal;
+import java.io.IOException;
 
 /**
  * @Author chenping
@@ -8,9 +8,7 @@ import java.math.BigDecimal;
  * @Date 2019/3/11
  **/
 public class Test {
-    public static void main(String[] args) {
-        Long aa = 100004l;
-        System.out.println(100004 == aa);
+    public static void main(String[] args) throws IOException {
 
     }
 }
