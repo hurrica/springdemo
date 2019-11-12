@@ -8,7 +8,10 @@ import java.io.IOException;
  * @Date 2019/3/11
  **/
 public class Test {
-    public static void main(String[] args) throws IOException {
+    private String field;
 
+    public static void main(String[] args) throws IOException, IllegalAccessException {
+        System.out.println(String.format("%0" + 10 + "d", 101));
     }
+
 }
