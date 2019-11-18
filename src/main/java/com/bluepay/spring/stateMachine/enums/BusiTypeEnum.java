@@ -14,4 +14,8 @@ public enum BusiTypeEnum {
     BusiTypeEnum(String event) {
         this.event = event;
     }
+
+    public String getEvent() {
+        return event;
+    }
 }

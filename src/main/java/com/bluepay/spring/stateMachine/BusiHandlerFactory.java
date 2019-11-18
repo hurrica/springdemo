@@ -5,6 +5,8 @@ import com.bluepay.spring.stateMachine.busiHandler.AnnualLeaveHandler;
 import com.bluepay.spring.stateMachine.busiHandler.PrivateAffairLeaveHandler;
 import com.bluepay.spring.stateMachine.busiHandler.SickLeaveHandler;
 
+import java.util.Random;
+
 public class BusiHandlerFactory {
     public static BaseBusiHandler getHandler(BusiTypeEnum busiType) {
         if (busiType == null) {
@@ -19,6 +21,18 @@ public class BusiHandlerFactory {
                 return new PrivateAffairLeaveHandler();
             default:
                 throw new RuntimeException("不存在的业务类型！");
+        }
+    }
+
+    public static BaseBusiHandler getHandler() {
+        Random rd = new Random();
+        int random = rd.nextInt(12);
+        if (random > 8) {
+            return new SickLeaveHandler();
+        } else if (random > 4){
+            return new AnnualLeaveHandler();
+        } else {
+            return new PrivateAffairLeaveHandler();
         }
     }
 }

@@ -1,10 +1,7 @@
 package com.bluepay.spring.test;
 
 import java.io.IOException;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * @Author chenping
@@ -15,10 +12,17 @@ public class Test {
     private String field;
 
     public static void main(String[] args) throws IOException, IllegalAccessException {
-        Map<String, String> map = new HashMap<>();
-        map.put("123", "1455");
-        List<String> values = (List<String>) map.values();
-        System.out.println(map.values().getClass());
+        List<String> list = new ArrayList<>();
+        list.add("ss");
+        list.forEach(e -> check(e));
+        System.out.println("test");
+    }
+
+    private static boolean check(String e) {
+        if (e.equals("ss")){
+            throw new RuntimeException("错误");
+        }
+        return true;
     }
 
 }

@@ -9,7 +9,9 @@ public enum  NodeEnum {
     DEPARTMENT_MANAGER("部门经理审批"),
     DEPARTMENT_GENERAL_MANAGER("部门总经理审批"),
     HR("HR审批"),
-    CEO("CEO审批");
+    CEO("CEO审批"),
+    COMPLETE("完成")
+    ;
 
     private String nodeName;
 
