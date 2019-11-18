@@ -14,7 +14,7 @@ public class ApplyTest {
 
     private static void applyTest() {
         Random random = new Random();
-        BaseBusiHandler handler = BusiHandlerFactory.getHandler();
+        BusiHandler handler = BusiHandlerFactory.getHandler();
         System.out.println("----------------------");
         NodeEnum nextNode = handler.apply();
         System.out.println();

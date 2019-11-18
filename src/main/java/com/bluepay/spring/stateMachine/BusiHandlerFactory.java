@@ -8,7 +8,7 @@ import com.bluepay.spring.stateMachine.busiHandler.SickLeaveHandler;
 import java.util.Random;
 
 public class BusiHandlerFactory {
-    public static BaseBusiHandler getHandler(BusiTypeEnum busiType) {
+    public static BusiHandler getHandler(BusiTypeEnum busiType) {
         if (busiType == null) {
             throw new RuntimeException("业务类型不能为空！");
         }
@@ -24,7 +24,7 @@ public class BusiHandlerFactory {
         }
     }
 
-    public static BaseBusiHandler getHandler() {
+    public static BusiHandler getHandler() {
         Random rd = new Random();
         int random = rd.nextInt(12);
         if (random > 8) {

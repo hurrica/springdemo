@@ -5,7 +5,7 @@ import com.bluepay.spring.stateMachine.busiHandler.nodeHandler.ApplyCommitHandle
 import com.bluepay.spring.stateMachine.busiHandler.nodeHandler.DirectLeaderHandler;
 
 public class NodeHandlerFactory {
-    public static BaseNodeHandler getNodeHandler(NodeEnum node) {
+    public static NodeHandler getNodeHandler(NodeEnum node) {
         if (node == null){
             throw new RuntimeException("审批节点不能为空");
         }

@@ -1,6 +1,6 @@
 package com.bluepay.spring.stateMachine.busiHandler;
 
-import com.bluepay.spring.stateMachine.BaseBusiHandler;
+import com.bluepay.spring.stateMachine.AbstractBusiHandler;
 import com.bluepay.spring.stateMachine.enums.BusiTypeEnum;
 import com.bluepay.spring.stateMachine.enums.NodeEnum;
 
@@ -8,7 +8,7 @@ import com.bluepay.spring.stateMachine.enums.NodeEnum;
  * 事假申请
  * 审批流程->直属领导审批-部门经理审批->总经理->HR
  */
-public class PrivateAffairLeaveHandler implements BaseBusiHandler {
+public class PrivateAffairLeaveHandler extends AbstractBusiHandler {
 
     @Override
     public NodeEnum doPass(NodeEnum currentNode) {

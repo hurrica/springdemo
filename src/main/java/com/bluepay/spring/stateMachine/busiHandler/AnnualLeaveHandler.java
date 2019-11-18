@@ -1,6 +1,6 @@
 package com.bluepay.spring.stateMachine.busiHandler;
 
-import com.bluepay.spring.stateMachine.BaseBusiHandler;
+import com.bluepay.spring.stateMachine.AbstractBusiHandler;
 import com.bluepay.spring.stateMachine.enums.BusiTypeEnum;
 import com.bluepay.spring.stateMachine.enums.NodeEnum;
 
@@ -8,13 +8,7 @@ import com.bluepay.spring.stateMachine.enums.NodeEnum;
  * 年假
  * 审批路径 直属领导审批->部门经理审批->HR->结束
  */
-public class AnnualLeaveHandler implements BaseBusiHandler {
-
-    @Override
-    public NodeEnum apply() {
-        System.out.println("年假申请");
-        return NodeEnum.DIRECT_LEADER;
-    }
+public class AnnualLeaveHandler extends AbstractBusiHandler {
 
     @Override
     public NodeEnum doPass(NodeEnum currentNode) {
@@ -36,11 +30,6 @@ public class AnnualLeaveHandler implements BaseBusiHandler {
     @Override
     public BusiTypeEnum getBusiType() {
         return BusiTypeEnum.ANNUAL_LEAVE;
-    }
-
-    @Override
-    public NodeEnum sendBack(NodeEnum currentNode) {
-        return null;
     }
 
 

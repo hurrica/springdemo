@@ -1,6 +1,6 @@
 package com.bluepay.spring.stateMachine.busiHandler.nodeHandler;
 
-import com.bluepay.spring.stateMachine.BaseNodeHandler;
+import com.bluepay.spring.stateMachine.NodeHandler;
 
-public class ApplyCommitHandler implements BaseNodeHandler {
+public class ApplyCommitHandler implements NodeHandler {
 }
