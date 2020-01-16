@@ -7,7 +7,7 @@
         <setting name="mapUnderscoreToCamelCase" value="true" />
     </settings>
     <typeHandlers>
-        <typeHandler handler="com.bluepay.spring.mybatis.config.MyEnumTypeHandler" javaType="com.bluepay.spring.mybatis.demo.BaseEnum"></typeHandler>
+        <typeHandler handler="com.ping.chen.spring.mybatis.config.MyEnumTypeHandler" javaType="com.ping.chen.spring.mybatis.demo.BaseEnum"></typeHandler>
     </typeHandlers>
 
     <environments default="development">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bluepay.spring.mybatis.dao.master.TsTransactionMapper">
-	<resultMap id="BaseResultMap" type="com.bluepay.spring.mybatis.demo.TsTransaction">
+<mapper namespace="com.ping.chen.spring.mybatis.dao.master.TsTransactionMapper">
+	<resultMap id="BaseResultMap" type="com.ping.chen.spring.mybatis.demo.TsTransaction">
 
 		<result column="transaction_type" property="transactionType"/>
 		<result column="asset_id" property="assetId"/>
@@ -20,7 +20,7 @@
 		<result column="sign_date" property="signDate"/>
 	</resultMap>
 
-    <select id="listAll" resultType="com.bluepay.spring.mybatis.demo.TsTransaction">
+    <select id="listAll" resultType="com.ping.chen.spring.mybatis.demo.TsTransaction">
         select * from ts_transaction
         <where>
 			<if test="transactionType != null">

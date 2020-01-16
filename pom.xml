@@ -6,7 +6,11 @@
 
     <groupId>com.bluepay</groupId>
     <artifactId>spring.demo</artifactId>
+    <packaging>pom</packaging>
     <version>dev-1.0.0</version>
+    <modules>
+        <module>spring.source</module>
+    </modules>
 
     <properties>
         <kotlin.version>1.2.31</kotlin.version>
@@ -195,6 +199,11 @@
             <version>3.6.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.rabbitmq</groupId>
+            <artifactId>amqp-client</artifactId>
+            <version>5.7.3</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -208,7 +217,7 @@
                         <manifest>
                             <addClasspath>true</addClasspath>
                             <classpathPrefix>lib/</classpathPrefix>
-                            <mainClass>com.bluepay.spring.demo.Application</mainClass>
+                            <mainClass>com.ping.chen.spring.demo.Application</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
