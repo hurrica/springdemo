@@ -14,7 +14,6 @@ public class Test {
     public static void main(String[] args) {
 
         ApplicationContext app = new ClassPathXmlApplicationContext("spring.xml");
-        test();
     }
 
     public static void test(){

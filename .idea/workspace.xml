@@ -1,147 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eb9ac045-81f0-456a-a83f-5cae8b60c33b" name="Default Changelist" comment="文件拆分合并测试">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/BeanDefinitionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/MyBeanFactoryPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/TestInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/scope/MyInstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/scope/MyScope.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/service/CirculateRefA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/service/CirculateRefB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/java/com/ping/chen/spring/source/service/FactoryBeanDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spring.source/src/main/resources/spring.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/cache/JedisService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/cache/RedisLockService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/cache/ehcache/Demo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/Application.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/TestMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/config/AsyncTaskExecutePoolConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/config/DataSourceConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/config/ThreadPoolConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/config/ElasticJobConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/job/MyElasticJob.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/job/TestElasticJob01.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/job/TestElasticJob02.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/job/TestElasticJob03.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/elasticjob/listener/MyElasticJobListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/kotlin/Test.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/service/MessageService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/service/impl/AsyncTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/service/impl/MessagePrinter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/service/impl/MessageServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/test/FactoryDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/test/Product.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/demo/test/RetryTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/io/BufferedReaderDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/io/IOTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/io/SequentialFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/BaseModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/JobConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/JobExecuteLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/ShoppingTradeInfo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/TestModel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/model/TsAsset.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/config/MyEnumTypeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/config/MybatisConfig.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/BaseDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/DynamicJobConfigDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/DynamicJobConfigSlaveDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/master/JobConfigMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/master/TsTransactionMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dao/slave/JobConfigSlaveMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/demo/BaseEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/demo/MybatisTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/demo/TransactionType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/demo/TsTransaction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dynamic/DataSourceEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dynamic/DynamicDataSourceAspect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dynamic/DynamicDataSourceContextHolder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dynamic/DynamicDataSourceResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/dynamic/TargetDataSource.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/service/JobConfigService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/mybatis/service/ServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/pdf/TOTReportPdfService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/pdf/resolve/PdfReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ArrayUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/DefaultReflectorFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ExceptionUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/Jdk.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/MetaClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/MetaObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ParamNameResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ParamNameUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ReflectionException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/Reflector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/ReflectorFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/SystemMetaObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/TypeParameterResolver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/factory/DefaultObjectFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/factory/ObjectFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/invoker/GetFieldInvoker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/invoker/Invoker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/invoker/MethodInvoker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/invoker/SetFieldInvoker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/property/PropertyCopier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/property/PropertyNamer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/property/PropertyTokenizer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/BaseWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/BeanWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/CollectionWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/DefaultObjectWrapperFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/MapWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/ObjectWrapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/reflection/wrapper/ObjectWrapperFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/AbstractBusiHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/ApplyTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/BusiHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/BusiHandlerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/NodeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/NodeHandlerFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/busiHandler/AnnualLeaveHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/busiHandler/PrivateAffairLeaveHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/busiHandler/SickLeaveHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/busiHandler/nodeHandler/ApplyCommitHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/busiHandler/nodeHandler/DirectLeaderHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/enums/AuditResultEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/enums/BusiTypeEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/stateMachine/enums/NodeEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/test/MyInvocationHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/test/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/test/TestInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/test/TestInterfaceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/util/DateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/util/Excel2PdfUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/util/ITextTest02.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/util/MyPdfUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/util/THSarabunNew.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/zookeeper/ZookeeperApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/bluepay/spring/zookeeper/watch/MyWatch.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/JobConfigMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/JobConfigMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/TsTransactionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/TsTransactionMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis/mybatis-config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/io/ArithHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/io/Calculator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/io/ExpressionDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/service/impl/MessagePrinterTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/test/JobSchedulerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/test/RetryTestTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/thread/file/FileData.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/thread/file/MyFileReader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/thread/singleton/SingletonDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/demo/thread/singleton/SingletonTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/bluepay/spring/mybatis/service/JobConfigServiceTest.java" beforeDir="false" />
-    </list>
+    <list default="true" id="eb9ac045-81f0-456a-a83f-5cae8b60c33b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,6 +96,7 @@
     </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -554,7 +415,7 @@
       <workItem from="1578625488095" duration="9557000" />
       <workItem from="1578881084164" duration="12856000" />
       <workItem from="1578968571771" duration="22928000" />
-      <workItem from="1579078052407" duration="2870000" />
+      <workItem from="1579078052407" duration="3161000" />
     </task>
     <task id="LOCAL-00001" summary="m">
       <created>1569413698278</created>
@@ -605,7 +466,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574820232301</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="文件拆分合并测试">
+      <created>1579140667511</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1579140667512</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TestHistory">
