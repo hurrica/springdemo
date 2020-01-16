@@ -180,6 +180,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -641,10 +642,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="文件拆分合并测试" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="113" y="0" key="CommitChangelistDialog2" timestamp="1579140584123">
+    <state x="113" y="0" key="CommitChangelistDialog2" timestamp="1579140666114">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="113" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579140584123" />
+    <state x="113" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1579140666114" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1579079919673">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -673,10 +674,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="254" height="198" key="ShowFilterAction_Filter_Popup/0.0.1366.728@0.0.1366.728" timestamp="1578627470307" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1579140696771">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1579140696771" />
     <state x="368" y="188" key="com.intellij.ide.util.TipDialog" timestamp="1578624408527">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="368" y="188" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578624408527" />
+    <state x="475" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1579140687413">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="475" y="281" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1579140687413" />
     <state x="237" y="0" width="1129" height="728" key="find.popup" timestamp="1579140628635">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
